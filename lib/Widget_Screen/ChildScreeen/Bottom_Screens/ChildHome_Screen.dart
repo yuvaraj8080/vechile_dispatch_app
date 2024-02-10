@@ -139,10 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body:SingleChildScrollView(
         child: Column(
             children:[
-        customAppBar(safeTextIndex:qIndex,
-          onTap:(){
-          getRandomSafeText();
-        },),
               const SizedBox(height:3),
               // const customCarouel(),
               Row(children: [
@@ -150,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight:FontWeight.bold,color:Colors.white)),
                 ],
               ),
-              const Emergency(),
+               Emergency(),
               Row(children: [
                   Text("   Explore LiveSafe",style:GoogleFonts.lato(fontSize:18,
                       fontWeight:FontWeight.bold,color:Colors.white)),

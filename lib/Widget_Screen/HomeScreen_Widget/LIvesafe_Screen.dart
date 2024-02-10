@@ -32,14 +32,14 @@ class LiveSafe extends StatelessWidget {
           width:MediaQuery.of(context).size.width,
         child:Padding(
           padding: const EdgeInsets.only(left:5),
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            scrollDirection:Axis.horizontal,
-            children:const [
-              PoliceStation(onMapFunction:openMap),
-              Hospital(onMapFunction:openMap),
-              Firebrigade(onMapFunction:openMap),
-            ]
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+                  PoliceStation(onMapFunction:openMap),
+                  Hospital(onMapFunction:openMap),
+                  Firebrigade(onMapFunction:openMap),
+
+            ],
           ),
         )
       ),

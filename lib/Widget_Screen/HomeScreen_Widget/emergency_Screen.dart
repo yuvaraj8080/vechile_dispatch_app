@@ -8,18 +8,23 @@ class Emergency extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width:MediaQuery.of(context).size.width,
-        height:130,
-      child:ListView(
-        physics:BouncingScrollPhysics(),
-        scrollDirection:Axis.horizontal,
-        children:[
-          PoliceEmergency(),
-          AmbulanceEmergency(),
-          FirebrigedeEmergency(),
-        ]
-      )
+    return Padding(
+      padding: const EdgeInsets.only(bottom:10),
+      child: SizedBox(
+        height:350,
+        child: GridView.count(
+            // childAspectRatio: 5 / 2,
+            crossAxisCount: 2,
+            crossAxisSpacing: 1.5,
+            mainAxisSpacing: 1.5,
+            children:[
+              // PoliceEmergency(),
+              AmbulanceEmergency(),
+              FirebrigedeEmergency(),
+              PoliceEmergency(),
+            ]),
+      ),
     );
+
   }
 }

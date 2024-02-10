@@ -28,7 +28,7 @@ class PoliceStation extends StatelessWidget {
                 ),
               )),
           ),
-          Text("Police Station",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.white))
+          Text("Police",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.white))
         ]
       ),
     );

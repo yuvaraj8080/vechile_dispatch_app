@@ -8,8 +8,7 @@ import '../../Componants_Widget/customText_Button.dart';
 import '../../Componants_Widget/custom_textfield.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/user_model.dart';
-import 'Child_Login_Screen.dart';
-import '../ParentScreen/ParentHome_Screen.dart';
+import 'Main_Login_Screen.dart';
 class RagisterChild extends StatefulWidget {
 
   @override
@@ -95,13 +94,13 @@ class _RagisterChildState extends State<RagisterChild> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " Register child",
+          " Register User",
           style: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.pinkAccent.shade700,
+        backgroundColor: Colors.white24,
       ),
       body: Stack(
         children: [
@@ -110,7 +109,7 @@ class _RagisterChildState extends State<RagisterChild> {
           :SingleChildScrollView(
             child: Container(
               height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     Color(0xff000000),
@@ -130,7 +129,7 @@ class _RagisterChildState extends State<RagisterChild> {
                         textInputAction:TextInputAction.next,
                         keyboardtype:TextInputType.name,
                         hintText: "Enter name",
-                        prefix:Icon(Icons.person,color:Colors.pinkAccent,),
+                        prefix:Icon(Icons.person,color:Colors.white24,),
                         onsave:(name){
                           _formData["name"] = name??"";
                         },
@@ -152,7 +151,7 @@ class _RagisterChildState extends State<RagisterChild> {
                         keyboardtype:TextInputType.number,
                         hintText: "Enter mobile number ",
                         prefix:Icon(Icons.phone,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
                         onsave:(phone){
                           _formData["phone"] = phone??"";
                         },
@@ -174,7 +173,7 @@ class _RagisterChildState extends State<RagisterChild> {
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
                           hintText: "Enter Email",prefix:Icon(Icons.email,
-                          color:Colors.pinkAccent),
+                          color:Colors.white24),
                           onsave:(cemail){
                             _formData["cemail"] = cemail??"";
                           },
@@ -198,7 +197,7 @@ class _RagisterChildState extends State<RagisterChild> {
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
                           hintText: "Enter Guardian Email",prefix:Icon(Icons.email,
-                          color:Colors.pinkAccent),
+                          color:Colors.white24),
                           onsave:(gemail){
                             _formData["gemail"] = gemail??"";
                           },
@@ -224,7 +223,7 @@ class _RagisterChildState extends State<RagisterChild> {
                         hintText: "Enter Password",
                         isPassword:isPasswordShown,
                         prefix:Icon(Icons.key_outlined,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
 
                         onsave:(password){
                           _formData["password"] = password??"";
@@ -247,8 +246,8 @@ class _RagisterChildState extends State<RagisterChild> {
                           });
                         },
                           icon:isPasswordShown
-                              ?Icon(Icons.visibility_off,color: Colors.pinkAccent)
-                              :Icon(Icons.visibility,color:Colors.pinkAccent),
+                              ?Icon(Icons.visibility_off,color: Colors.white24)
+                              :Icon(Icons.visibility,color:Colors.white24),
                         ),
 
                       ),
@@ -259,7 +258,7 @@ class _RagisterChildState extends State<RagisterChild> {
                         hintText: "retype Password",
                         isPassword:isRetypePasswordShown,
                         prefix:Icon(Icons.key_outlined,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
                         onsave:(repassword){
                           _formData["repassword"] = repassword??"";
                         },
@@ -281,8 +280,8 @@ class _RagisterChildState extends State<RagisterChild> {
                           });
                         },
                           icon:isRetypePasswordShown
-                              ?Icon(Icons.visibility_off,color: Colors.pinkAccent)
-                              :Icon(Icons.visibility,color:Colors.pinkAccent),
+                              ?Icon(Icons.visibility_off,color: Colors.white24)
+                              :Icon(Icons.visibility,color:Colors.white24),
                         ),
 
                       ),

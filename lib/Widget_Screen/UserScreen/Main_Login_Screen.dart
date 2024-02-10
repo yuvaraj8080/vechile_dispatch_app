@@ -3,16 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vechile_dispatch_app/Widget_Screen/UserScreen/userRagister_Screen.dart';
 import '../../Componants_Widget/customElevated_Button.dart';
 import '../../Componants_Widget/custom_textfield.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
 import '../../DB/shere_Prefrences..dart';
+import '../AdminScreen/adminHome_Screen.dart';
+import '../AdminScreen/adminRegister_Screen.dart';
 import 'Bottom_Page.dart';
-import 'childRagister_Screen.dart';
-import 'Bottom_Screens/ChildHome_Screen.dart';
-import '../ParentScreen/ParentHome_Screen.dart';
-import '../ParentScreen/parentRegister_Screen.dart';
+
 
 
 
@@ -81,13 +81,13 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " User Login",
+          "Welcome..",
           style: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.white24,
       ),
       body:Stack(
         children: [
@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
                           hintText: "Enter Email",prefix:Icon(Icons.email_outlined,
-                          color:Colors.pinkAccent),
+                          color:Colors.white24),
                           onsave:(email){
                             _formData["email"] = email??"";
                           },
@@ -141,7 +141,7 @@ class _LoginState extends State<Login> {
                         keyboardtype:TextInputType.emailAddress,
                         hintText: "Enter Password",isPassword:isPasswordShown,
                         prefix:Icon(Icons.key_outlined,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
                         onsave:(password){
                           _formData["password"] = password??"";
                         },
@@ -163,8 +163,8 @@ class _LoginState extends State<Login> {
                           });
                         },
                           icon:isPasswordShown
-                              ?Icon(Icons.visibility_off,color: Colors.pinkAccent)
-                              :Icon(Icons.visibility,color:Colors.pinkAccent),
+                              ?Icon(Icons.visibility_off,color: Colors.white24)
+                              :Icon(Icons.visibility,color:Colors.white24),
                         ),
 
                       ),
@@ -197,7 +197,7 @@ class _LoginState extends State<Login> {
                                 style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.pinkAccent,
+                                  color: Colors.white24,
                                 ),
                               ),
                               onPressed: () {},
@@ -222,7 +222,7 @@ class _LoginState extends State<Login> {
                                 style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.pinkAccent,
+                                  color: Colors.white24,
                                 ),
                               ),
                             ),
@@ -246,7 +246,7 @@ class _LoginState extends State<Login> {
                                 style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.pinkAccent,
+                                  color: Colors.white24,
                                 ),
                               ),
                             ),

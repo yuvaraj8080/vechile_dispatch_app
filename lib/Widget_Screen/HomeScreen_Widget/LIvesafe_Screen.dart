@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../Constants/Utils.dart';
+import '../LiveSafe_Widget/FireBrigade_card.dart';
 import '../LiveSafe_Widget/HospitalCard.dart';
-import '../LiveSafe_Widget/PharmacyCard.dart';
 import '../LiveSafe_Widget/PoliceStationCard.dart';
 class LiveSafe extends StatelessWidget {
   const LiveSafe({super.key});
@@ -28,7 +27,14 @@ class LiveSafe extends StatelessWidget {
       color:Colors.grey.shade900,
       elevation:2,shadowColor: Colors.white,
       child: Container(
-        height:80,
+        height:80,decoration:BoxDecoration(
+        borderRadius:BorderRadius.circular(10),
+          gradient:LinearGradient(
+        colors: [
+          Color(0xffe6e9f0),
+          Color(0xffeef1f5),
+        ]
+      )),
           width:MediaQuery.of(context).size.width,
         child:Padding(
           padding: const EdgeInsets.only(left:5),
@@ -38,7 +44,6 @@ class LiveSafe extends StatelessWidget {
                   PoliceStation(onMapFunction:openMap),
                   Hospital(onMapFunction:openMap),
                   Firebrigade(onMapFunction:openMap),
-
             ],
           ),
         )

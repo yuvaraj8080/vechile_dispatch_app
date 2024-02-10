@@ -28,7 +28,7 @@ class Hospital extends StatelessWidget {
                     ),
                   )),
             ),
-            Text("Ambulance",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.white))
+            Text("Ambulance",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.black))
           ]
       ),
     );

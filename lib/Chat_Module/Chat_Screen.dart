@@ -57,7 +57,7 @@ class _ChattingScreenState extends State<ChattingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.white24,
         title: Text(widget.friendName,style:GoogleFonts.lato(fontSize:18),),
       ),
       body: Column(
@@ -79,8 +79,8 @@ class _ChattingScreenState extends State<ChattingScreen> {
                     return Center(
                       child: Text(
                         type == "parent"
-                            ? "TALK WITH CHILD"
-                            : "TALK WITH GUARDIAN",
+                            ? "CHAT WITH USER "
+                            : "CHAT WITH DISPATCHERS",
                         style: TextStyle(fontSize: 30),
                       ),
                     );

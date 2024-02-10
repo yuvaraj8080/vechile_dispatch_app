@@ -27,7 +27,7 @@ class Firebrigade extends StatelessWidget {
                     ),
                   )),
             ),
-            Text("Fire Brigade",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.white))
+            Text("Fire Brigade",style:GoogleFonts.roboto(fontSize:15,fontWeight:FontWeight.bold,color:Colors.black))
           ]
       ),
     );

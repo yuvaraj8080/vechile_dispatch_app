@@ -24,8 +24,8 @@ class PoliceEmergency extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xfff5576c),
-                Color(0xfff093fb),
+                Color(0xffe6e9f0),
+                Color(0xffeef1f5),
               ],
             ),
           ),

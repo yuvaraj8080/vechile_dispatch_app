@@ -11,7 +11,6 @@ import '../../../Constants/Utils.dart';
 import '../../../Constants/contactsm.dart';
 import '../../../DB/db_services.dart';
 import '../../HomeScreen_Widget/LIvesafe_Screen.dart';
-import '../../HomeScreen_Widget/custom_AppBar.dart';
 import '../../HomeScreen_Widget/emergency_Screen.dart';
 import '../../SafeHome_Widget/GoogleMap.dart';
 import '../../SafeHome_Widget/SafeHome_Screen.dart';
@@ -127,14 +126,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return  Scaffold(
       appBar: AppBar(
-          title:Row(
-        children: [
-          Text("ResQ ",style:GoogleFonts.lexend(fontSize:22,fontWeight:FontWeight.bold,color:Colors.white)),
-          Text("Dispatch",style:GoogleFonts.archivoBlack(fontSize:22,fontWeight:FontWeight.bold,color:Colors.green,)),
-        ],
-      ),
-        backgroundColor: Colors.pinkAccent.shade700,
-        elevation:2,shadowColor:Colors.white
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        bottom: PreferredSize(
+          preferredSize:Size.fromHeight(10), // Adjust height as needed
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                CircleAvatar(backgroundImage:AssetImage("assets/images/add_pic.png",)),
+                SizedBox(width:15,),
+                Text('Hello There!!',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold)),
+              ],
+            ),
+          )
+        ),
       ),
       body:SingleChildScrollView(
         child: Column(
@@ -153,21 +159,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const LiveSafe(),
-              InkWell(
-                onTap:(){
-                  Navigator.push(context,MaterialPageRoute(builder:(context){
-                    return LiveLocation();
-                  }));
-                },
-                child: Card(
-                  elevation:3,shadowColor: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                        height:250,width:double.infinity,
-                        child:Center(child: LiveLocation())),
-                  ),),),
-
               SafeHome(),
 
               ]),

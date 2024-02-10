@@ -2,11 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'DB/shere_Prefrences..dart';
-import 'DB/shere_Prefrences..dart';
-import 'Widget_Screen/ChildScreeen/Bottom_Page.dart';
-import 'Widget_Screen/ChildScreeen/Child_Login_Screen.dart';
-import 'Widget_Screen/ParentScreen/ParentHome_Screen.dart';
-import 'Widget_Screen/SafeHome_Widget/GoogleMap.dart';
+import 'Widget_Screen/AdminScreen/adminHome_Screen.dart';
+import 'Widget_Screen/UserScreen/Bottom_Page.dart';
+import 'Widget_Screen/UserScreen/Main_Login_Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +14,10 @@ void main() async {
       apiKey: 'AIzaSyCeTBozsvB3j23a1IEAeTjtFo1BwVGP-bA',
       messagingSenderId: '450975758480',
       projectId: 'vehicledispatchapp',
+      storageBucket: "vehicledispatchapp.appspot.com"
     ),
   );
   await MySharedPrefference.init();
-  // await initializeService();
   runApp(const MyApp());
 }
 
@@ -33,44 +31,33 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.blueAccent.shade700,useMaterial3: true,
+        primaryColor: Colors.blueAccent.shade700,
+        // useMaterial3: true, // Removed this line
       ),
       home: FutureBuilder(
         future: MySharedPrefference.getUserType(),
         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator(); // Wrapped with const
           }
 
           final userType = snapshot.data;
 
           if (userType == null || userType.isEmpty) {
-            return Login();
+            return  Login(); // Wrapped with const
           }
 
           if (userType == "child") {
-            return BottomPage();
+            return const BottomPage(); // Wrapped with const
           }
 
           if (userType == "parent") {
-            return ParentHomeScreen();
+            return const ParentHomeScreen(); // Wrapped with const
           }
 
-          return Login(); // Default to login if userType is not recognized
+          return  Login(); // Default to login if userType is not recognized
         },
       ),
     );
   }
 }
-// class CheckAuth extends StatelessWidget {
-//   // const CheckAuth({Key? key}) : super(key: key);
-
-//   checkData() {
-//     if (MySharedPrefference.getUserType() == 'parent') {}
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold();
-//   }
-// }

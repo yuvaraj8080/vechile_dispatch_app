@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../Chat_Module/Chat_Screen.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
-import '../ChildScreeen/Child_Login_Screen.dart';
+import '../UserScreen/Main_Login_Screen.dart';
 class ParentHomeScreen extends StatelessWidget {
   const ParentHomeScreen({super.key});
 
@@ -32,14 +32,14 @@ class ParentHomeScreen extends StatelessWidget {
             )
           ])
       ),
-      appBar:AppBar(title:Text("SELECT CHILD",style:GoogleFonts.roboto(fontSize:20,
+      appBar:AppBar(title:Text("LIST OF USER",style:GoogleFonts.roboto(fontSize:20,
           fontWeight:FontWeight.bold)),
-        backgroundColor:Colors.pink,elevation:3,
+        backgroundColor:Colors.white24,elevation:3,
       ),
       body:StreamBuilder(
           stream:FirebaseFirestore.instance.collection("user")
               .where("type",isEqualTo: "child")
-              .where("guardiantEmail",isEqualTo:FirebaseAuth.instance.currentUser!.email)
+              .where("guardiantEmail",isEqualTo:FirebaseAuth.instance.currentUser?.email)
               .snapshots(),
           builder:(BuildContext context,AsyncSnapshot<QuerySnapshot> snapshot){
 

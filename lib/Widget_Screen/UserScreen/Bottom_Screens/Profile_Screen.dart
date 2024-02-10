@@ -15,7 +15,7 @@ import '../../../Componants_Widget/custom_textfield.dart';
 import '../../../Constants/Constants.dart';
 import '../../../Constants/PrimaryButton.dart';
 import '../../../Constants/Utils.dart';
-import '../Child_Login_Screen.dart';
+import '../Main_Login_Screen.dart';
 
 class CheckUserStatusBeforeChatOnProfile extends StatelessWidget {
   const CheckUserStatusBeforeChatOnProfile({Key? key});

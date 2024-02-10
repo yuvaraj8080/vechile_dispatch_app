@@ -10,7 +10,7 @@ import '../../Componants_Widget/custom_textfield.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
 import '../../Constants/user_model.dart';
-import '../ChildScreeen/Child_Login_Screen.dart';
+import '../UserScreen/Main_Login_Screen.dart';
 class RegisterParent extends StatefulWidget {
 
   @override
@@ -97,13 +97,13 @@ class _RegisterParentState extends State<RegisterParent> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " Register Parent",
+          " Register Admin",
           style: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.pinkAccent.shade700,
+        backgroundColor: Colors.white24,
       ),
       body: Stack(
         children: [
@@ -132,7 +132,7 @@ class _RegisterParentState extends State<RegisterParent> {
                         textInputAction:TextInputAction.next,
                         keyboardtype:TextInputType.name,
                         hintText: "Enter name",
-                        prefix:const Icon(Icons.person,color:Colors.pinkAccent,),
+                        prefix:const Icon(Icons.person,color:Colors.white24,),
                         onsave:(name){
                           _formData["name"] = name??"";
                         },
@@ -155,7 +155,7 @@ class _RegisterParentState extends State<RegisterParent> {
                         hintText: "Enter mobile number ",
                         // isPassword:isPasswordShown,
                         prefix:const Icon(Icons.phone,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
                         onsave:(phone){
                           _formData["phone"] = phone??"";
                         },
@@ -177,7 +177,7 @@ class _RegisterParentState extends State<RegisterParent> {
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
                           hintText: "Enter Email",prefix:const Icon(Icons.email,
-                          color:Colors.pinkAccent),
+                          color:Colors.white24),
                           onsave:(gemail){
                             _formData["gemail"] = gemail??"";
                           },
@@ -201,7 +201,7 @@ class _RegisterParentState extends State<RegisterParent> {
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
                           hintText: "Enter child email",prefix:const Icon(Icons.email,
-                          color:Colors.pinkAccent),
+                          color:Colors.white24),
                           onsave:(cemail){
                             _formData["cemail"] = cemail??"";
                           },
@@ -227,7 +227,7 @@ class _RegisterParentState extends State<RegisterParent> {
                         hintText: "Enter Password",
                         isPassword:isPasswordShown,
                         prefix:const Icon(Icons.key_outlined,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
 
                         onsave:(password){
                           _formData["password"] = password??"";
@@ -250,8 +250,8 @@ class _RegisterParentState extends State<RegisterParent> {
                           });
                         },
                           icon:isPasswordShown
-                              ?const Icon(Icons.visibility_off,color: Colors.pinkAccent)
-                              :const Icon(Icons.visibility,color:Colors.pinkAccent),
+                              ?const Icon(Icons.visibility_off,color: Colors.white24)
+                              :const Icon(Icons.visibility,color:Colors.white24),
                         ),
 
                       ),
@@ -262,7 +262,7 @@ class _RegisterParentState extends State<RegisterParent> {
                         hintText: "retype Password",
                         isPassword:isRetypePasswordShown,
                         prefix:const Icon(Icons.key_outlined,
-                          color:Colors.pinkAccent,),
+                          color:Colors.white24,),
                         onsave:(repassword){
                           _formData["repassword"] = repassword??"";
                         },
@@ -284,8 +284,8 @@ class _RegisterParentState extends State<RegisterParent> {
                           });
                         },
                           icon:isRetypePasswordShown
-                              ?const Icon(Icons.visibility_off,color: Colors.pinkAccent)
-                              :const Icon(Icons.visibility,color:Colors.pinkAccent),
+                              ?const Icon(Icons.visibility_off,color: Colors.white24)
+                              :const Icon(Icons.visibility,color:Colors.white24),
                         ),
 
                       ),

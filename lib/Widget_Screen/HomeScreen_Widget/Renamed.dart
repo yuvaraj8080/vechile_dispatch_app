@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FirebrigedeEmergency extends StatelessWidget {
+class newaddhare extends StatelessWidget {
   _callNumber(String number) async {
     await FlutterPhoneDirectCaller.callNumber(number);
   }
@@ -13,10 +13,10 @@ class FirebrigedeEmergency extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10.0, top: 2),
       child: GestureDetector(
         onTap: () {
-          _callNumber("112");
+          _callNumber("100");
         },
         child: Container(
-          height: 150, // Change the height here
+          height: 100, // Change the height here
           width: MediaQuery.of(context).size.width * 0.4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
@@ -45,7 +45,7 @@ class FirebrigedeEmergency extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 15),
                   child: Center(
                     child: Text(
-                      "Fire Brigade",
+                      "Police",
                       style: GoogleFonts.roboto(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

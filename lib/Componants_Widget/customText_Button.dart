@@ -26,7 +26,7 @@ class customTextButton extends StatelessWidget {
             child: Text(title,style: GoogleFonts.roboto(
                  fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.pinkAccent,
+                color: Colors.white24,
               ),
             ),
           ),

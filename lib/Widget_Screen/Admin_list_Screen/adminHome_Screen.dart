@@ -7,8 +7,8 @@ import '../../Chat_Module/Chat_Screen.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
 import '../UserScreen/Main_Login_Screen.dart';
-class ParentHomeScreen extends StatelessWidget {
-  const ParentHomeScreen({super.key});
+class Admin_List_user extends StatelessWidget {
+  const Admin_List_user({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class ParentHomeScreen extends StatelessWidget {
       body:StreamBuilder(
           stream:FirebaseFirestore.instance.collection("user")
               .where("type",isEqualTo: "child")
-              .where("guardiantEmail",isEqualTo:FirebaseAuth.instance.currentUser?.email)
+              // .where("guardiantEmail",isEqualTo:FirebaseAuth.instance.currentUser?.email)
               .snapshots(),
           builder:(BuildContext context,AsyncSnapshot<QuerySnapshot> snapshot){
 

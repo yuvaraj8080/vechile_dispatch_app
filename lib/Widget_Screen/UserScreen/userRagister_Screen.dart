@@ -94,7 +94,7 @@ class _RagisterChildState extends State<RagisterChild> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " Register User",
+          " Register Admin",
           style: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _RagisterChildState extends State<RagisterChild> {
                       CustomTextField(
                           textInputAction:TextInputAction.next,
                           keyboardtype:TextInputType.emailAddress,
-                          hintText: "Enter Email",prefix:Icon(Icons.email,
+                          hintText: "Enter Your Email",prefix:Icon(Icons.email,
                           color:Colors.white24),
                           onsave:(cemail){
                             _formData["cemail"] = cemail??"";

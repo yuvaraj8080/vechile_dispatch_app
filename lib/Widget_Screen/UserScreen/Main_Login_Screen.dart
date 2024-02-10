@@ -9,7 +9,7 @@ import '../../Componants_Widget/custom_textfield.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
 import '../../DB/shere_Prefrences..dart';
-import '../AdminScreen/adminHome_Screen.dart';
+import '../Admin_list_Screen/adminHome_Screen.dart';
 import '../AdminScreen/adminRegister_Screen.dart';
 import 'Bottom_Page.dart';
 
@@ -27,55 +27,55 @@ class _LoginState extends State<Login> {
   final _formData = Map<String,Object>();
   bool isLoading = false;
 
-  _onSubmit()async{
-      _formKey.currentState!.save();
-      try {
-        setState(() {
-          isLoading = true;
-        });
-        UserCredential userCredential = await FirebaseAuth.instance.
-        signInWithEmailAndPassword(
-            email: _formData["email"].toString(),
-            password:_formData["password"].toString() );
+  _onSubmit() async {
+    _formKey.currentState!.save();
+    try {
+      setState(() {
+        isLoading = true;
+      });
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+          email: _formData["email"].toString(),
+          password: _formData["password"].toString());
 
-          if(userCredential.user != null){
-            setState(() {
-              isLoading = false;
-            });
-            FirebaseFirestore.instance.collection('user')
-                .doc(userCredential.user!.uid)
-                .get()
-                .then((value){
-
-              if(value['type'] == 'parent'){
-                print(value['type']);
-                MySharedPrefference.saveUserType("parent");
-                goTo(context,ParentHomeScreen());
-              }
-              else{
-                MySharedPrefference.saveUserType("child");
-                goTo(context,BottomPage());
-              }
-            });
-        }
-      }
-      on FirebaseAuthException catch (e) {
+      if (userCredential.user != null) {
         setState(() {
           isLoading = false;
         });
-        if (e.code == 'user-not-found') {
-          Utils().showError("No user found for that email.");
-          print('No user found for that email.');
-        } else if (e.code == 'wrong-password') {
-          Utils().showError("Wrong password provided for that user.");
-          print('Wrong password provided for that user.');
-        }
+        FirebaseFirestore.instance.collection('user')
+            .doc(userCredential.user!.uid)
+            .get()
+            .then((value) {
+          if (value['type'] == 'parent') {
+            if (_formData["email"] == "admin@gmail.com" &&
+                _formData["password"] == "admin@8080") {
+              MySharedPrefference.saveUserType("parent");
+              goTo(context, Admin_List_user());
+            } else {
+              Utils().showError("You are not admin");
+            }
+          } else {
+            MySharedPrefference.saveUserType("child");
+            goTo(context, BottomPage());
+          }
+        });
       }
-      print('Email: ${_formData["email"]}');
-      print('Password: ${_formData["password"]}');
-
-
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        isLoading = false;
+      });
+      if (e.code == 'user-not-found') {
+        Utils().showError("No user found for that email.");
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        Utils().showError("Wrong password provided for that user.");
+        print('Wrong password provided for that user.');
+      }
+    }
+    print('Email: ${_formData["email"]}');
+    print('Password: ${_formData["password"]}');
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

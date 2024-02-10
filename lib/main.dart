@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'DB/shere_Prefrences..dart';
-import 'Widget_Screen/AdminScreen/adminHome_Screen.dart';
+import 'Widget_Screen/AdminScreen/Admin_Profile/Admin_bottom_Screen.dart';
 import 'Widget_Screen/UserScreen/Bottom_Page.dart';
 import 'Widget_Screen/UserScreen/Main_Login_Screen.dart';
 
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
           }
 
           if (userType == "parent") {
-            return const ParentHomeScreen(); // Wrapped with const
+            return const Admin_Bottom_page(); // Wrapped with const
           }
 
           return  Login(); // Default to login if userType is not recognized

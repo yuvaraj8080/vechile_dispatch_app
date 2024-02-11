@@ -11,9 +11,9 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(title:Text("Chat With admin",style:GoogleFonts.roboto(fontSize:20,
+      appBar:AppBar(title:Text("Chat With Admin",style:GoogleFonts.roboto(fontSize:20,
           fontWeight:FontWeight.bold)),
-        backgroundColor:Colors.pink,elevation:3,
+        backgroundColor:Colors.white24,elevation:3,
       ),
       body:StreamBuilder(
           stream:FirebaseFirestore.instance.collection("user")

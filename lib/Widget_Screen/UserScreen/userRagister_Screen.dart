@@ -94,7 +94,7 @@ class _RagisterChildState extends State<RagisterChild> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          " Register Admin",
+          " Register as User",
           style: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -193,29 +193,29 @@ class _RagisterChildState extends State<RagisterChild> {
                           }
                       ),
                       SizedBox(height: 15),
-                      CustomTextField(
-                          textInputAction:TextInputAction.next,
-                          keyboardtype:TextInputType.emailAddress,
-                          hintText: "Enter Guardian Email",prefix:Icon(Icons.email,
-                          color:Colors.white24),
-                          onsave:(gemail){
-                            _formData["gemail"] = gemail??"";
-                          },
-                          validate:(gemail){
-                            if(gemail!.isEmpty){
-                              return "Enter a valid Email";
-                            }
-                            else if(gemail.length<5){
-                              return "Enter a correct Email";
-                            }
-                            else if(  !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(gemail)){
-                              return "Enter correct email missing '@'";
-                            }
-                            else{
-                              return null;
-                            }
-                          }
-                      ),
+                      // CustomTextField(
+                      //     textInputAction:TextInputAction.next,
+                      //     keyboardtype:TextInputType.emailAddress,
+                      //     hintText: "Enter Guardian Email",prefix:Icon(Icons.email,
+                      //     color:Colors.white24),
+                      //     onsave:(gemail){
+                      //       _formData["gemail"] = gemail??"";
+                      //     },
+                      //     validate:(gemail){
+                      //       if(gemail!.isEmpty){
+                      //         return "Enter a valid Email";
+                      //       }
+                      //       else if(gemail.length<5){
+                      //         return "Enter a correct Email";
+                      //       }
+                      //       else if(  !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(gemail)){
+                      //         return "Enter correct email missing '@'";
+                      //       }
+                      //       else{
+                      //         return null;
+                      //       }
+                      //     }
+                      // ),
                       SizedBox(height: 15),
                       CustomTextField(
                         textInputAction:TextInputAction.next,
@@ -255,7 +255,7 @@ class _RagisterChildState extends State<RagisterChild> {
                       CustomTextField(
                         textInputAction:TextInputAction.next,
                         keyboardtype:TextInputType.emailAddress,
-                        hintText: "retype Password",
+                        hintText: "confirm Password",
                         isPassword:isRetypePasswordShown,
                         prefix:Icon(Icons.key_outlined,
                           color:Colors.white24,),

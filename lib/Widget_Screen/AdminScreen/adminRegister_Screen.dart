@@ -236,7 +236,7 @@ class _RegisterParentState extends State<RegisterParent> {
                       CustomTextField(
                         textInputAction:TextInputAction.next,
                         keyboardtype:TextInputType.emailAddress,
-                        hintText: "retype Password",
+                        hintText: "confirm Password",
                         isPassword:isRetypePasswordShown,
                         prefix:const Icon(Icons.key_outlined,
                           color:Colors.white24,),

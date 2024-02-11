@@ -219,7 +219,7 @@ class _LoginState extends State<Login> {
                             child: Padding(
                               padding: const EdgeInsets.only(left:80,top:6),
                               child: Text(
-                                "Register as Child",
+                                "Register as User",
                                 style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -243,7 +243,7 @@ class _LoginState extends State<Login> {
                             child: Padding(
                               padding: const EdgeInsets.only(left:80,top:6),
                               child: Text(
-                                "Register as Parent",
+                                "Register as Admin",
                                 style: GoogleFonts.roboto(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,

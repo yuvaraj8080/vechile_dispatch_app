@@ -77,7 +77,7 @@ class LiveLocationState extends State<LiveLocation> {
     return SafeArea(
       child: Scaffold(
         appBar:AppBar( title: Text(
-          "Live Location",
+          "Live Location Tracking",
           style: GoogleFonts.lato(
             fontSize:18,
             fontWeight: FontWeight.bold,
@@ -85,17 +85,20 @@ class LiveLocationState extends State<LiveLocation> {
         ),
           backgroundColor:Colors.white54
         ),
-        body: GoogleMap(
-          buildingsEnabled:true,
-          trafficEnabled: true,
-          mapType: MapType.normal,
-          initialCameraPosition: _kGooglePlex,
-          markers: <Marker>{_setMarker()},
-          myLocationButtonEnabled: true,
-          myLocationEnabled: true,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
+        body: Padding(
+          padding: const EdgeInsets.only(right:5,left:5),
+          child: GoogleMap(
+            buildingsEnabled:true,
+            trafficEnabled: true,
+            mapType: MapType.normal,
+            initialCameraPosition: _kGooglePlex,
+            markers: <Marker>{_setMarker()},
+            myLocationButtonEnabled: true,
+            myLocationEnabled: true,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: FloatingActionButton.extended(

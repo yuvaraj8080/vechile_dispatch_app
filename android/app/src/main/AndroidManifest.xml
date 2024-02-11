@@ -15,9 +15,9 @@
     <application
         android:label="vechile_dispatch_app"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBwNQdE5lMCe1LL0cq5AHlGB_z-MdSDKDc"/>
+            android:value="AIzaSyBLIxyG1L9vZQI4Ifkn-XPB1SEPZFQ7vRk"/>
 
         <activity
             android:name=".MainActivity"

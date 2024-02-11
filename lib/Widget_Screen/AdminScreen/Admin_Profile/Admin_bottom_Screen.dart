@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../Constants/Constants.dart';
 import '../../Admin_list_Screen/adminHome_Screen.dart';
-import 'Admin_home_Screen.dart';
 import 'GoogleMap.dart';
 
 
@@ -20,15 +19,12 @@ class Admin_bottom_screen extends State<Admin_Bottom_page> {
   final List<Widget> pages = [
 
     const Admin_List_user(),
-    const admin_home_screen(),
-    LiveLocation(),
+
+    LiveLocation()
   ];
 
   final List<BottomNavigationBarItem> bottomNavBarItems = [
     const BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
-    const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-
-    // BottomNavigationBarItem(icon: Icon(Icons.reviews), label: 'Reviews'),
     const BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Map'),
   ];
 

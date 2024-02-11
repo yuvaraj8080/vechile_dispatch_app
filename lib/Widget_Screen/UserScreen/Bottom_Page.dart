@@ -32,7 +32,7 @@ class _BottomPageState extends State<BottomPage> {
     const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
 
     // BottomNavigationBarItem(icon: Icon(Icons.reviews), label: 'Reviews'),
-    const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+    const BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'ChatBOt'),
   ];
 
   void onTapped(int index) {

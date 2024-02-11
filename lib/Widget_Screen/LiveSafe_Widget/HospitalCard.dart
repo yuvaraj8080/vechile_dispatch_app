@@ -14,7 +14,7 @@ class Hospital extends StatelessWidget {
               onTap:(){
                 onMapFunction!("Hospitals near me");
 
-    },
+              },
               child: Card(
                   elevation:3,
                   shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(20),

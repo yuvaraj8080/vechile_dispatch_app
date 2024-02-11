@@ -177,7 +177,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 const LiveSafe(),
-                SizedBox(height:5,),
                 SafeHome(),
       
                 ]),

@@ -13,7 +13,7 @@ class Firebrigade extends StatelessWidget {
             InkWell(
               onTap:(){
                 onMapFunction!("Fire Brigade me");
-    },
+              },
               child: Card(
                   elevation:3,
                   shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(20),

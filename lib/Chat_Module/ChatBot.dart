@@ -68,7 +68,6 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
       print('Message is empty');
     } else {
       setState(() {
-        addMessage(Message(text: DialogText(text: [text])), true);
       });
 
       DetectIntentResponse response = await dialogFlowtter.detectIntent(

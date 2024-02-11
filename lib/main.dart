@@ -1,3 +1,4 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,11 +15,21 @@ void main() async {
       apiKey: 'AIzaSyCeTBozsvB3j23a1IEAeTjtFo1BwVGP-bA',
       messagingSenderId: '450975758480',
       projectId: 'vehicledispatchapp',
-      storageBucket: "vehicledispatchapp.appspot.com"
+      storageBucket: "vehicledispatchapp.appspot.com",
+
     ),
+
   );
   await MySharedPrefference.init();
+
+  await FirebaseAppCheck.instance.activate(
+      webProvider:ReCaptchaV3Provider("recaptcha-v3-site-key"),
+  androidProvider: AndroidProvider.debug,
+  );
+
   runApp(const MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {
@@ -48,7 +59,7 @@ class MyApp extends StatelessWidget {
           }
 
           if (userType == "child") {
-            return const BottomPage(); // Wrapped with const
+            return  BottomPage(); // Wrapped with const
           }
 
           if (userType == "parent") {

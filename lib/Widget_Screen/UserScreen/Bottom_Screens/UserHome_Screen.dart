@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _getPermission() async => await [Permission.sms].request();
   _isPermissionGranted() async => await Permission.sms.status.isGranted;
 
-  Future<bool> _handleLocationPermission() async {
+  Future<bool> _handleLocationPermission(BuildContext context) async {
     bool serviceEnabled;
     LocationPermission permission;
 
@@ -59,8 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return true;
   }
 
+
+
   _getCurrentLocation() async {
-    final hasPermission = await _handleLocationPermission();
+    final hasPermission = await _handleLocationPermission( context);
     final Telephony telephony = Telephony.instance;
     await telephony.requestPhoneAndSmsPermissions;
     if (!hasPermission) return;
@@ -116,12 +118,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    getRandomSafeText();
     super.initState();
     _getPermission();
     _getCurrentLocation();
-
+    _handleLocationPermission(context); // Pass the context here
   }
+
   @override
   Widget build(BuildContext context) {
 

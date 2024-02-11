@@ -12,18 +12,18 @@ class Emergency extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom:10,top:5),
       child: SizedBox(
-        height:350,
+        height:300,
         child: GridView.count(
+
             // childAspectRatio: 5 / 2,
             crossAxisCount: 2,
-            crossAxisSpacing: 1.5,
-            mainAxisSpacing: 1.5,
+            crossAxisSpacing:0.1,
+            mainAxisSpacing:0.1,
             children:[
               PoliceEmergency(),
               AmbulanceEmergency(),
               FirebrigedeEmergency(),
               newaddhare(),
-
             ]),
       ),
     );

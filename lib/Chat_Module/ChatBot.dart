@@ -26,36 +26,38 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('IMBot',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold)),
-        backgroundColor:Colors.black54,elevation:2,shadowColor: Colors.white,
-      ),
-      body: Container(
-        child: Column(
-          children: [
-            Expanded(child: MessagesScreen(messages: messages)),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal:10, vertical:5),
-              color: Colors.white24,
-              child: Row(
-                children: [
-                  Expanded(
-                      child: TextField(
-                        controller: _controller,
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  IconButton(
-                    iconSize:30,
-                      onPressed: () {
-                        sendMessage(_controller.text);
-                        _controller.clear();
-                      },
-                      icon: Icon(Icons.send))
-                ],
-              ),
-            )
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('IMBot',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold)),
+          backgroundColor:Colors.black54,elevation:2,shadowColor: Colors.white,
+        ),
+        body: Container(
+          child: Column(
+            children: [
+              Expanded(child: MessagesScreen(messages: messages)),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal:10, vertical:5),
+                color: Colors.white24,
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: TextField(
+                          controller: _controller,
+                          style: TextStyle(color: Colors.white),
+                        )),
+                    IconButton(
+                        iconSize:30,
+                        onPressed: () {
+                          sendMessage(_controller.text);
+                          _controller.clear();
+                        },
+                        icon: Icon(Icons.send))
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

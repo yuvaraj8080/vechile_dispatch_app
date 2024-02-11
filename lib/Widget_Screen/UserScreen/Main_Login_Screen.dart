@@ -9,6 +9,7 @@ import '../../Componants_Widget/custom_textfield.dart';
 import '../../Constants/Constants.dart';
 import '../../Constants/Utils.dart';
 import '../../DB/shere_Prefrences..dart';
+import '../AdminScreen/Admin_Profile/Admin_bottom_Screen.dart';
 import '../Admin_list_Screen/adminHome_Screen.dart';
 import '../AdminScreen/adminRegister_Screen.dart';
 import 'Bottom_Page.dart';
@@ -50,7 +51,7 @@ class _LoginState extends State<Login> {
             if (_formData["email"] == "admin@gmail.com" &&
                 _formData["password"] == "admin@8080") {
               MySharedPrefference.saveUserType("parent");
-              goTo(context, Admin_List_user());
+              goTo(context, Admin_Bottom_page());
             } else {
               Utils().showError("You are not admin");
             }

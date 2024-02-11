@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vechile_dispatch_app/Chat_Module/ChatBot.dart';
 
 import '../../Constants/Constants.dart';
 import 'Bottom_Screens/Chat_Page.dart';
@@ -21,16 +22,17 @@ class _BottomPageState extends State<BottomPage> {
     const AddContactsPage(),
     const ChatPage(),
     HomeScreen(),
-    const ProfilePage(),
+    const ChatBotScreen(),
+
   ];
 
   final List<BottomNavigationBarItem> bottomNavBarItems = [
-    BottomNavigationBarItem(icon: Icon(Icons.contacts), label: 'Contacts'),
-    BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+    const BottomNavigationBarItem(icon: Icon(Icons.contacts), label: 'Contacts'),
+    const BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
+    const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
 
     // BottomNavigationBarItem(icon: Icon(Icons.reviews), label: 'Reviews'),
-    BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+    const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
   ];
 
   void onTapped(int index) {

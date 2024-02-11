@@ -231,34 +231,34 @@ class _SafeHomeState extends State<SafeHome> {
       onTap: () {
         showModalSafeHome(context);
       },
-      child: Card(
-        elevation: 3,
-        shadowColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        child: Container(
-          height: 150,
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            children: [
-              const Expanded(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text(
-                        "Send Location",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text("Share Location"),
+      child: Container(
+
+        decoration: BoxDecoration(
+            color: Colors.white,
+          borderRadius: BorderRadius.circular(30)
+        ),
+        height: 130,
+        width: MediaQuery.of(context).size.width,
+        child: Row(
+          children: [
+            const Expanded(
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Text(
+                      "Send SOS Alert",
+                      style: TextStyle(fontSize: 20, color:Colors.black,fontWeight: FontWeight.bold),
                     ),
-                  ],
-                ),
+                    subtitle: Text("Your trusted contact",style: TextStyle(color:Colors.black),),
+                  ),
+                ],
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset("assets/images/route.jpg"),
-              ),
-            ],
-          ),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset("assets/images/location.avif"),
+            ),
+          ],
         ),
       ),
     );

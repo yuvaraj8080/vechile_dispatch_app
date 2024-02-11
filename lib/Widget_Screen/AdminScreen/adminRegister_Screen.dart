@@ -51,7 +51,6 @@ class _RegisterParentState extends State<RegisterParent> {
             final user = UserModel(
                 name:_formData["name"].toString(),
                 phone:_formData["phone"].toString(),
-                childEmail:_formData["cemail"].toString(),
                 guardianEmail:_formData["gemail"].toString(),
                 id:v,
                 type:"parent"
@@ -197,29 +196,7 @@ class _RegisterParentState extends State<RegisterParent> {
                           }
                       ),
                       const SizedBox(height: 15),
-                      // CustomTextField(
-                      //     textInputAction:TextInputAction.next,
-                      //     keyboardtype:TextInputType.emailAddress,
-                      //     hintText: "Enter child email",prefix:const Icon(Icons.email,
-                      //     color:Colors.white24),
-                      //     onsave:(cemail){
-                      //       _formData["cemail"] = cemail??"";
-                      //     },
-                      //     validate:(cemail){
-                      //       if(cemail!.isEmpty){
-                      //         return "Enter a valid Email";
-                      //       }
-                      //       else if(cemail.length<5){
-                      //         return "Enter a correct Email";
-                      //       }
-                      //       else if(  !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(cemail)){
-                      //         return "Enter correct email missing '@'";
-                      //       }
-                      //       else{
-                      //         return null;
-                      //       }
-                      //     }
-                      // ),
+
                       const SizedBox(height: 15),
                       CustomTextField(
                         textInputAction:TextInputAction.next,

@@ -1,19 +1,20 @@
 import 'dart:math';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
 import '../../../Chat_Module/ChatBot.dart';
+import '../../../Constants/Constants.dart';
 import '../../../Constants/Utils.dart';
 import '../../../Constants/contactsm.dart';
 import '../../../DB/db_services.dart';
 import '../../HomeScreen_Widget/LIvesafe_Screen.dart';
 import '../../HomeScreen_Widget/emergency_Screen.dart';
-import '../../SafeHome_Widget/GoogleMap.dart';
 import '../../SafeHome_Widget/SafeHome_Screen.dart';
+import '../Main_Login_Screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -124,58 +125,62 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return  Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        bottom: PreferredSize(
-          preferredSize:Size.fromHeight(10), // Adjust height as needed
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                CircleAvatar(backgroundImage:AssetImage("assets/images/add_pic.png",)),
-                SizedBox(width:15,),
-                Text('Hello There!!',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold)),
-              ],
+    return  SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          bottom:  PreferredSize(
+            preferredSize:Size.fromHeight(10), // Adjust height as needed
+            child: Padding(
+              padding: EdgeInsets.all(8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Row(
+                    children: [
+                      CircleAvatar(backgroundImage:AssetImage("assets/images/res.png",),radius: 25,),
+                      SizedBox(width:25,),
+                      Text('ResQ Dispatch',style:TextStyle(fontSize:20,fontWeight:FontWeight.bold)),
+                    ],
+                  ),
+                  SizedBox(width:30,),
+                   IconButton(icon: Icon(Icons.logout,color:Colors.grey,),onPressed: () async {
+                     try {
+                       await FirebaseAuth.instance.signOut();
+                       goTo(context, Login());
+                     } on FirebaseAuthException catch (e) {
+                       Utils().showError(e.toString());
+                     }
+                   },)
+      
+                ],
+              ),
             ),
-          )
+      
+          ),
+      
         ),
-      ),
-      body:SingleChildScrollView(
-        child: Column(
-            children:[
-              const SizedBox(height:3),
-              // const customCarouel(),
-              Row(children: [
-                  Text("   Emergency helpline",style:GoogleFonts.lato(fontSize:18,
-                      fontWeight:FontWeight.bold,color:Colors.white)),
-                ],
-              ),
-               Emergency(),
-              Row(children: [
-                  Text("   Explore LiveSafe",style:GoogleFonts.lato(fontSize:18,
-                      fontWeight:FontWeight.bold,color:Colors.white)),
-                ],
-              ),
-              const LiveSafe(),
-              SafeHome(),
-
-              ]),
-      ),
-      floatingActionButton:Padding(
-        padding: const EdgeInsets.only(bottom:65),
-        child: FloatingActionButton(
-
-          shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(30)),
-          elevation:2,
-          backgroundColor:Colors.pinkAccent.shade100,
-          onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder:(context){
-              return ChatBotScreen();
-            }));
-        },
-            child:CircleAvatar(backgroundImage:AssetImage("assets/images/bot.png",)),
+        body:SingleChildScrollView(
+          child: Column(
+              children:[
+                const SizedBox(height:3),
+                Row(children: [
+                    Text("   Emergency helpline",style:GoogleFonts.lato(fontSize:18,
+                        fontWeight:FontWeight.bold,color:Colors.white)),
+                  ],
+                ),
+                 Emergency(),
+                Row(children: [
+                    Text("   Explore LiveSafe",style:GoogleFonts.lato(fontSize:18,
+                        fontWeight:FontWeight.bold,color:Colors.white)),
+                  ],
+                ),
+                const LiveSafe(),
+                SizedBox(height:5,),
+                SafeHome(),
+      
+                ]),
         ),
       ),
     );
